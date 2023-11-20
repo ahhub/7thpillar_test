@@ -11,6 +11,7 @@ const start = async () => {
   await server.start();
 
   server.applyMiddleware({ app });
+
   app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Something went wrong!');
